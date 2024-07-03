@@ -5,10 +5,10 @@ import styled from "styled-components"
 import Pokedex from './assets/components/Pokedex'
 
 const Spinner = styled(motion.div)`
-width: 50px;
-height: 50px;
-border: 4px solid black;
-border-top: 4px solid red;
+width: 100px;
+height: 100px;
+border: 14px solid black;
+border-top: 14px solid red;
 border-radius: 50%;
 `
 

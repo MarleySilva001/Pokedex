@@ -21,11 +21,15 @@ export default function Pokedex(visivel) {
     );
 
     const nextPokemon = () => {
-        setId(id + 1)
+        if (id < 1025) {
+            setId(id + 1)
+        }
     }
 
     const backPokemon = () => {
-        setId(id - 1)
+        if (id > 1) {
+            setId(id - 1)
+        }
     }
 
     return (
@@ -35,29 +39,32 @@ export default function Pokedex(visivel) {
             exit={{ opacity: 0, Y: -50 }}
             transition={{ duration: 1 }}
         >
-            {visivel && 
-            <div className="pokedex">
-            <h1>Pokedex</h1>
-            {pokemon && (
-                <div className="pokemon">
-                    <p className="tiny5-regular">{pokemon.name}</p>
-                    <div className="fundopoke">
-                        <img className="pokeimg2" src="pokeball.png" alt="pokebola" />
-                        <div className="fundopoke2">
-                            <img className="pokeimg" src={pokemon.sprites.front_default} alt={pokemon.name} />{/* .sprites.other.home.front_default  */}
+            {visivel && pokemon &&
+                <div className="pokedex">
+                    <img className="tituloImg" src="pokemonLogo.png" alt="" />
+                    {pokemon && (
+                        <div className="pokemon">
+                            <p className="tiny5-regular">{pokemon.id}.{pokemon.name}</p>
+                            <div className="fundopoke">
+                                <img className="pokeimg2" src="pokeball.png" alt="pokebola" />
+                                <div className="fundopoke2">
+                                    <img className="pokeimg" src={pokemon.sprites.front_default} alt={pokemon.name} />{/* .sprites.other.home.front_default  */}
+                                </div>
+                            </div>
+                            <div className="info">
+                                <p><strong>Altura:</strong>{pokemon.height}</p>
+                                <p><strong>Peso:</strong>{pokemon.weight}</p>
+                            </div>
+                            <div className="button">
+                                <button onClick={backPokemon}>Anterior</button>
+                                <button onClick={nextPokemon}>Próximo</button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="button">
-                        <button onClick={backPokemon}>Anterior</button>
-                        <button onClick={nextPokemon}>Próximo</button>
-                    </div>
+                    )
+                    }
                 </div>
-            )
-            }
-        </div>
             }
         </motion.div>
-        
+
     )
 }

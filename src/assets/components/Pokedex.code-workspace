@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Pokedex",
+			"path": "../../.."
+		},
+		{
+			"name": "node_modules",
+			"path": "../../../../../../Desktop/RickAndMorty/rickandmorty/node_modules"
+		}
+	],
+	"settings": {}
+}
