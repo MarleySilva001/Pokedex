@@ -34,10 +34,10 @@ export default function Pokedex(visivel) {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, Y: -50 }}
-            transition={{ duration: 1 }}
+            exit={{ opacity: 0, Y: 100 }}
+            transition={{ duration: 3 }}
         >
             {visivel && pokemon &&
                 <div className="pokedex">
